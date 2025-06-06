@@ -134,6 +134,41 @@ void salvarDadosNaEEPROM(int agua, int chuva, float temp, float umid, DateTime a
   EEPROM.put(endereco, agora.second());
 }
 
+void mostrarDadosSalvosSerial() {
+  int endereco = 0;
+  int agua, chuva;
+  float temp, umid;
+  int ano, mes, dia, hora, minuto, segundo;
+
+  EEPROM.get(endereco, agua); endereco += sizeof(agua);
+  EEPROM.get(endereco, chuva); endereco += sizeof(chuva);
+  EEPROM.get(endereco, temp);  endereco += sizeof(temp);
+  EEPROM.get(endereco, umid);  endereco += sizeof(umid);
+  EEPROM.get(endereco, ano);   endereco += sizeof(int);
+  EEPROM.get(endereco, mes);   endereco += sizeof(int);
+  EEPROM.get(endereco, dia);   endereco += sizeof(int);
+  EEPROM.get(endereco, hora);  endereco += sizeof(int);
+  EEPROM.get(endereco, minuto);endereco += sizeof(int);
+  EEPROM.get(endereco, segundo);
+
+  Serial.println("==== DADOS SALVOS NA EEPROM ====");
+  Serial.print("Data: ");
+  if (dia < 10) Serial.print("0"); Serial.print(dia); Serial.print("/");
+  if (mes < 10) Serial.print("0"); Serial.print(mes); Serial.print("/");
+  Serial.println(ano);
+
+  Serial.print("Hora: ");
+  if (hora < 10) Serial.print("0"); Serial.print(hora); Serial.print(":");
+  if (minuto < 10) Serial.print("0"); Serial.print(minuto); Serial.print(":");
+  if (segundo < 10) Serial.print("0"); Serial.print(segundo); Serial.println();
+
+  Serial.print("Nivel de Agua: "); Serial.print(agua); Serial.println("%");
+  Serial.print("Intensidade da Chuva: "); Serial.println(chuva);
+  Serial.print("Temperatura: "); Serial.print(temp); Serial.println(" °C");
+  Serial.print("Umidade: "); Serial.print(umid); Serial.println(" %");
+  Serial.println("================================");
+}
+
 void setup() {
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
@@ -237,6 +272,16 @@ void loop() {
     }
 
     tela = (tela + 1) % 4;
+  }
+
+  // COMANDO SERIAL PARA "GET"
+  if (Serial.available()) {
+    String comando = Serial.readStringUntil('\n');
+    comando.trim();
+
+    if (comando.equalsIgnoreCase("get")) {
+      mostrarDadosSalvosSerial();
+    }
   }
 
   delay(200);
