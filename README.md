@@ -5,15 +5,15 @@
 
 ## 📝 Descrição do Problema
 
-As enchentes são eventos frequentes em muitas regiões e causam grandes prejuízos, como perdas materiais, impactos na infraestrutura e, em casos mais graves, risco à vida humana. 
+  As enchentes são eventos frequentes em muitas regiões e causam grandes prejuízos, como perdas materiais, impactos na infraestrutura e, em casos mais graves, risco à vida humana. 
 A falta de monitoramento em tempo real e de sistemas preventivos agrava a situação, dificultando a resposta rápida e a tomada de decisões. Além disso, a ausência de dados históricos dificulta o planejamento e a prevenção de futuras ocorrências.
 
 ---
 
 ## 🎯 Visão Geral da Solução
 
-Esta solução ajuda na prevenção de enchentes por meio de um monitoramento simples, acessível e automatizado. Com alertas em tempo real e acionamento automático de medidas de segurança, o sistema protege vidas e reduz danos materiais.
-Além disso, a coleta contínua de dados ambientais permite identificar padrões e prever futuras ocorrências, contribuindo para um planejamento urbano mais seguro e eficiente.
+  Esta solução ajuda na prevenção de enchentes por meio de um monitoramento simples, acessível e automatizado. Com alertas em tempo real e acionamento automático de medidas de segurança, o sistema protege vidas e reduz danos materiais.
+  Além disso, a coleta contínua de dados ambientais permite identificar padrões e prever futuras ocorrências, contribuindo para um planejamento urbano mais seguro e eficiente.
 O projeto monitora o nível da água em um reservatório, detecta a intensidade da chuva, mede temperatura e umidade do ar, e exibe essas informações em um display LCD. Utiliza LEDs e buzzer para alertar sobre o risco de enchentes e aciona automaticamente uma comporta com servo motor quando o nível da água está alto.
 
 ### Principais Funcionalidades
@@ -122,10 +122,9 @@ if (!rtc.isrunning()) {
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autoras
 
-**Seu Nome Aqui**
-💻 Engenheiro de Software & Técnico em Eletroeletrônica
+**Giovana Gaspar Larocca e Rayssa luzia Portela Aquino**
 📍 São Paulo - Brasil
 
 ---
