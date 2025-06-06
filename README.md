@@ -40,7 +40,7 @@ O projeto monitora o nível da água em um reservatório, detecta a intensidade 
 | Sensor DHT22               | Leitura de temperatura e umidade         |
 | RTC DS1307                 | Registro de tempo real                   |
 | LCD 16x2 com I2C           | Interface de usuário                     |
-| LEDs RGB                   | Alerta visual (segurança / atenção / risco) |
+| LEDs                       | Alerta visual (segurança / atenção / risco) |
 | Buzzer                     | Alerta sonoro                            |
 | Servo Motor (SG90)         | Abertura da comporta                     |
 | Protoboard + Jumpers       | Conexões                                 |
